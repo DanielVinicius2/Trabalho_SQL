@@ -2,7 +2,7 @@ CREATE TABLE produtos(
 	id SERIAL PRIMARY KEY,
 	nome TEXT NOT NULL,
 	preco DECIMAL(10,2) NOT NULL,
-	estoque INT
+	descricao TEXT
 );
 
 CREATE TABLE clientes(
@@ -15,13 +15,12 @@ CREATE TABLE clientes(
 
 CREATE TABLE pedidos(
 	id SERIAL PRIMARY KEY,
-	id_produto INT,
 	id_cliente INT,
 	data_pedido DATE NOT NULL,
-	forma_pagamento VARCHAR(20) NOT NULL,
+	id_forma_pagamento INT,
 	total DECIMAL(12,2) NOT NULL,
 	FOREIGN KEY (id_cliente) REFERENCES clientes(id),
-	FOREIGN KEY (id_produto) REFERENCES produtos(id)
+	FOREIGN KEY (id_forma_pagamento) REFERENCES forma_pagamento(id)
 );
 
 CREATE TABLE itens_pedidos(
@@ -47,9 +46,3 @@ CREATE TABLE estoque(
 	FOREIGN KEY (id_produto) REFERENCES produtos(id)
 
 )
-
-ALTER TABLE pedidos DROP COLUMN forma_pagamento;
-ALTER TABLE pedidos ADD COLUMN id_forma_pagamento INT;
-ALTER TABLE pedidos ADD FOREIGN KEY (id_forma_pagamento) REFERENCES forma_pagamento(id)
-ALTER TABLE produtos DROP COLUMN estoque;
-ALTER TABLE produtos ADD COLUMN descricao TEXT;
