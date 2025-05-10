@@ -71,3 +71,40 @@ INSERT INTO itens_pedidos (id_pedido, id_produto, quantidade, preco_unitario) VA
 (7, 6, 1, 79.90),
 (8, 9, 1, 49.90),
 (9, 1, 1, 39.90);
+
+ UPDATE Produtos
+SET preco = preco * 1.10
+WHERE preco < 50.00;
+
+--Correção de Telefone:
+UPDATE Clientes
+SET telefone = '11988887777'
+WHERE nome = 'João Silva';
+
+--Zerar Estoque de algum produto:
+UPDATE Estoque
+SET quantidade = 0
+WHERE id_produto = 7;
+
+
+--Deleção de Dados Duplicados:
+	--Identificando Duplicatas
+SELECT nome, email, COUNT(*)
+FROM clientes
+GROUP BY nome, email
+HAVING COUNT(*) > 1;
+	--Excluindos os dados Duplicados
+WITH Duplicados AS (
+  SELECT id, 
+         ROW_NUMBER() OVER (PARTITION BY nome, email ORDER BY id) AS rn
+  		 -- 'ROW_NUMBER()' dá um número para cada cliente repetido.
+  		 -- 'PARTITION BY nome, email' agrupa os dados duplicados.
+		 -- 'ORDER BY id_cliente' define que o menor ID será o "original".
+  FROM clientes
+)
+DELETE FROM Clientes
+WHERE id IN (
+  SELECT id FROM duplicados WHERE rn > 1
+	-- A subquery seleciona os que têm rn > 1, ou seja, os duplicados.
+	-- O DELETE remove só esses duplicados.
+);
