@@ -1,5 +1,5 @@
 # Trabalho_SQL
-Repsoitorio Dedicado ao Trabalho do Professor Anderson
+Repositorio Dedicado ao Trabalho do Professor Anderson
 
 # 💼 Sistema de Vendas para Loja (Cenário E)
 
