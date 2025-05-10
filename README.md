@@ -67,4 +67,15 @@ O sistema foi projetado para controlar as principais entidades de um processo de
 │
 └── README.md                    # Descrição do projeto e instruções de uso
  
+```
+
+## 👨‍💻 Autor
+### Nome: Daniel Vinicius Sobral Viana
+
+### Curso: Engenharia de Software
+
+### Professor: Anderson Costa
+
+### Data: 09 de Maio de 2025
+
 
