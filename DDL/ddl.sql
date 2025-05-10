@@ -51,3 +51,5 @@ CREATE TABLE estoque(
 ALTER TABLE pedidos DROP COLUMN forma_pagamento;
 ALTER TABLE pedidos ADD COLUMN id_forma_pagamento INT;
 ALTER TABLE pedidos ADD FOREIGN KEY (id_forma_pagamento) REFERENCES forma_pagamento(id)
+ALTER TABLE produtos DROP COLUMN estoque;
+ALTER TABLE produtos ADD COLUMN descricao TEXT;
