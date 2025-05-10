@@ -5,6 +5,7 @@ Repsoitorio Dedicado ao Trabalho do Professor Anderson
 
 Este projeto tem como objetivo simular o funcionamento de um sistema de vendas de uma loja utilizando um banco de dados relacional. Ele abrange desde a modelagem das tabelas até a manipulação e consulta de dados usando SQL.
 
+Link para o Video: https://www.loom.com/share/4b1bd6b7c02940cfaa14d029f6799b21?sid=a411f940-d557-4adf-8ffc-ea1f6f2a5ba6
 ---
 
 ## 🧩 Cenário Escolhido
